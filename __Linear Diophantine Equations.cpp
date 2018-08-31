@@ -10,6 +10,8 @@ set the value of a, b, c, and call solve() method. Solution depends on the retur
 To generate more solution use the value of tun and rise.
 Often in problems we need to find solutions near vertical or horizontal line. For
 those we can use move NearVerticalLine() and moveNearHorizontalLine() functions
+
+To find another solution(x1, y1) = x + k * B / G, Y - k * A / g), g is an integer
 */
 //Extended Euclidean Algorithm
 struct LinearDiphontine {

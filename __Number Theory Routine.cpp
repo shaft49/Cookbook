@@ -45,3 +45,41 @@ ll ext_gcd ( ll A, ll B, ll *X, ll *Y ){
     *X = x2; *Y = y2;
     return r2;
 }
+
+ll ext_gcd(ll a, ll b, ll& x, ll& y){
+    /// Bezout's identity, ax + by = gcd(a,b)
+
+    if (!b){
+        y = 0, x = 1;
+        return a;
+    }
+
+    ll g = ext_gcd(b, a % b, y, x);
+    y -= ((a / b) * x);
+    return g;
+}
+// Modular Inverse
+ll mod_inverse(ll a, ll m){
+    /// inverse exists if and only if a and m are co-prime
+    ll x, y, inv;
+    ext_gcd(a, m, x, y);
+    inv = (x + m) % m;
+    return inv;
+}
+// Modular Inverse from 1 to n;
+ll fact[N], inv[N];
+void Generate(int n){
+    int i, x;
+    for (fact[0] = 1, i = 1; i <= n; i++) fact[i] = ((ll)i * fact[i - 1]) % MOD;
+
+    /// inv[i] = Inverse modulo of fact[i]
+    inv[n] = bigmod(fact[n], MOD - 2);
+    for (i = n - 1; i >= 0; i--) inv[i] = ((ll)inv[i + 1] * (i + 1)) % MOD;
+
+    /// Inverse modulo of numbers 1 to MAX in linear time below
+    inv[1] = 1;
+	for (i = 2; i <= n; i++){
+        inv[i] = MOD - ((MOD / i) * (long long)inv[MOD % i]) % MOD;
+        if (inv[i] < 0) inv[i] += MOD;
+	}
+}
