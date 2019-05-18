@@ -1,4 +1,3 @@
-BIT/Fenwick Tree
 /// Fenwick tree, Point updates and range queries
 int tree[N];
 class Fenwick{

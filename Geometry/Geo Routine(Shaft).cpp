@@ -443,7 +443,7 @@ struct circle {
     }
 };
 
-#define maxp 1000
+#define maxp 200010
 //If size is large declare array as global
 struct polygon{
     int n;

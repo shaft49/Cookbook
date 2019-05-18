@@ -3,7 +3,7 @@ struct query{
     query(){}
     query(int l, int r, int id):l(l), r(r), id(id){}
 }Q[N];
-int magic = 200, sum;
+int magic = 320, sum;
 int arr[N], cnt[N], ans[N];
 bool comp(query a,query b){
     int l1 = a.l/magic, l2 = b.l/magic;

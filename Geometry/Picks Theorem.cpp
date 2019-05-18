@@ -2,7 +2,7 @@
 // Picks Theorem :: A = I + B/2 - 1
 // A = area of polygon , I =  the number of points (int) lying strictly inside the polygon
 // B = number of points on the border( int co ordinate )
-ll lattice_pts(point a, point b){
+ll lattice_points(point a, point b){
     ll x = (ll)(b.x - a.x), y = (ll)(b.y - a.y);
     return llabs(__gcd(x, y)) + 1;
 }

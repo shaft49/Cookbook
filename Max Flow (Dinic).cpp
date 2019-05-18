@@ -1,6 +1,6 @@
 // Dinic's algorithm for directed graphs (0 based index for graphs)
 // For undirected graphs, just add two directed edges
-
+// Complexity O(E * V^2)
 namespace flow{
 
     struct edge{

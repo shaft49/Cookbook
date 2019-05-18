@@ -16,8 +16,8 @@ void build(int node, int b, int e){
         tree[node].v[0] = arr[b];
         return;
     }
-    int mid = (b+e)/2;
-    int Left = node*2,Right=node*2+1;
+    int mid = (b + e) / 2;
+    int Left = node * 2, Right = node * 2 + 1;
     build(Left, b, mid);
     build(Right, mid+1, e);
     tree[node] = call(tree[Left], tree[Right]);
@@ -30,7 +30,7 @@ int query(int node,int b,int e,int i,int j,int k){
         int tmp = tree[node].v.size() - l;
         return tmp;
     }
-    int mid=(b+e)/2;
-    int Left=node*2,Right=node*2+1;
+    int mid = (b + e) / 2;
+    int Left = node * 2,Right = node * 2 + 1;
     return (query(Left, b, mid, i, j, k) + query(Right, mid + 1, e, i, j, k));
 }
