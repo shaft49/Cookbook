@@ -5,6 +5,7 @@ void buildTable ( int n ) {
     ///Base Case
     for ( int i = 0; i < n; i++ ) {
         table[0][i] = arr[i];
+        debug(arr[i]);
     }
     ///Current power of 2 is cur
     ///power of 2 for previous row is prev
